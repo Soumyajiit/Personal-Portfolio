@@ -1,0 +1,254 @@
+/* personal-details.component.css */
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+    min-height: 60vh;
+}
+
+.title-area {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.title-area h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.5em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+.title-area p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    color: var(--text-secondary);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease-out 0.2s forwards;
+}
+
+.picture-area {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--light-grey-border);
+    box-shadow: 0px 5px 15px var(--shadow-medium);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 1s ease-out 0.4s forwards;
+}
+
+.picture-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.picture-area:hover {
+    transform: scale(1.02);
+}
+
+/* Content Grid (About Me & Projects) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 80px;
+}
+
+.card {
+    background-color: var(--bg-pure-white);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0px 8px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.8em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: var(--bg-pure-white);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #3A7ADF;
+    transform: translateY(-2px);
+}
+
+/* Skills Section */
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 80px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background-color: #E6F2F8;
+    color: var(--primary-accent);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #CCE5F5;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design for Personal Details */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .title-area {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .picture-area {
+        margin-bottom: 40px;
+    }
+
+    .title-area h1 {
+        font-size: 3.5em;
+    }
+
+    .title-area p {
+        font-size: 1.2em;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .title-area h1 {
+        font-size: 2.8em;
+    }
+
+    .title-area p {
+        font-size: 1.1em;
+    }
+
+    .picture-area {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-area h1 {
+        font-size: 2.2em;
+    }
+
+    .title-area p {
+        font-size: 1em;
+    }
+
+    .picture-area {
+        width: 150px;
+        height: 150px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .skill-tag {
+        font-size: 0.85em;
+        padding: 6px 14px;
+    }
+}
+
+.projects-card .project-entry h4 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.projects-card .project-entry h4 a:hover {
+    text-decoration: none;
+    color: inherit;
+}

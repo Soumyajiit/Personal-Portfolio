@@ -1,0 +1,44 @@
+/* src/styles.css */
+
+/* Global Styles & Variables */
+:root {
+    --primary-accent: #c49cf8; /* Medium Blue */
+    --secondary-accent: #6DD4CC; /* Teal */
+    --text-primary: #333333; /* Dark Charcoal */
+    --text-secondary: #7F8C8D; /* Light Grey */
+    --bg-off-white: #F8F8F8;
+    --bg-pure-white: #FFFFFF;
+    --light-grey-border: #E0E0E0;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.08);
+}
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-off-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Global Container Class */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Global Responsive Styles (e.g., for container padding) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+}
