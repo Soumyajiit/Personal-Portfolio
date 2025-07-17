@@ -1,0 +1,29 @@
+.contact-section {
+    background-color: var(--bg-off-white); 
+}
+
+.contact-intro {
+    max-width: 700px;
+    margin: 0 auto 2em auto;
+    font-size: 1.1em;
+    color: var(--text-primary);
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-links .button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

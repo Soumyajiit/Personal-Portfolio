@@ -1,17 +1,16 @@
-/* personal-details.component.css */
-
-/* Hero Section */
 .hero-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 80px 0;
     min-height: 60vh;
+    background-color: var(--bg-off-white);
+    gap: 80px;
 }
 
 .title-area {
     flex: 1;
-    margin-right: 40px;
+    text-align: center; /* Keeps H1 and tagline centered relative to each other */
 }
 
 .title-area h1 {
@@ -32,7 +31,33 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 1s ease-out 0.2s forwards;
+    margin-bottom: 20px; /* ADDED: Space between tagline and new contact info */
 }
+
+/* New styles for contact info below the tagline */
+.contact-info-below-tagline {
+    margin-top: 5px; /* Small space from tagline */
+    text-align: center; /* Ensure it's centered */
+    font-size: 1em; /* Base font size for the entire line */
+    color: var(--text-primary); /* Default color for the separator and links */
+}
+
+.contact-info-below-tagline a {
+    color: var(--text-primary); /* Black/Dark Charcoal for links */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease;
+}
+
+.contact-info-below-tagline a:hover {
+    color: var(--primary-accent); /* Deep purple on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.contact-info-below-tagline .separator {
+    margin: 0 8px; /* Space around the separator */
+    color: var(--text-primary); /* Ensure separator color is consistent */
+}
+
 
 .picture-area {
     flex-shrink: 0;
@@ -46,6 +71,10 @@
     opacity: 0;
     transform: scale(0.9);
     animation: fadeInScale 1s ease-out 0.4s forwards;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .picture-area img {
@@ -53,91 +82,16 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    min-width: 250px;
+    min-height: 250px;
 }
 
 .picture-area:hover {
     transform: scale(1.02);
 }
 
-/* Content Grid (About Me & Projects) */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 80px;
-}
 
-.card {
-    background-color: var(--bg-pure-white);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0px 8px 20px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1.8em;
-    color: var(--text-primary);
-    margin-bottom: 20px;
-}
-
-.card p {
-    font-size: 1.1em;
-    color: var(--text-primary);
-    margin-bottom: 20px;
-}
-
-.button {
-    display: inline-block;
-    background-color: var(--primary-accent);
-    color: var(--bg-pure-white);
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.button:hover {
-    background-color: #3A7ADF;
-    transform: translateY(-2px);
-}
-
-/* Skills Section */
-.skills-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding-bottom: 80px;
-    justify-content: center;
-}
-
-.skill-tag {
-    background-color: #E6F2F8;
-    color: var(--primary-accent);
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 0.95em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.skill-tag:hover {
-    background-color: #CCE5F5;
-    transform: translateY(-3px);
-}
-
-/* Animations */
+/* Animations (kept here as they are specific to this component's intro) */
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
@@ -166,15 +120,32 @@
         flex-direction: column;
         text-align: center;
         padding-top: 50px;
+        gap: 0;
     }
 
     .title-area {
         margin-right: 0;
         margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .title-area p {
+        margin-bottom: 15px; /* Adjust margin for tagline on smaller screens */
+    }
+
+    .contact-info-below-tagline {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    .contact-info-below-tagline {
+        font-size: 0.9em; /* Smaller font size on small screens */
+    }
+    .contact-info-below-tagline .separator {
+        margin: 0 5px; /* Adjust separator spacing for smaller screens */
     }
 
     .picture-area {
         margin-bottom: 40px;
+        margin-left: 0;
     }
 
     .title-area h1 {
@@ -183,10 +154,6 @@
 
     .title-area p {
         font-size: 1.2em;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -206,14 +173,8 @@
     .picture-area {
         width: 180px;
         height: 180px;
-    }
-
-    .card {
-        padding: 30px;
-    }
-
-    .card h3 {
-        font-size: 1.5em;
+        min-width: 180px;
+        min-height: 180px;
     }
 }
 
@@ -229,26 +190,7 @@
     .picture-area {
         width: 150px;
         height: 150px;
+        min-width: 150px;
+        min-height: 150px;
     }
-
-    .button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .skill-tag {
-        font-size: 0.85em;
-        padding: 6px 14px;
-    }
-}
-
-.projects-card .project-entry h4 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.projects-card .project-entry h4 a:hover {
-    text-decoration: none;
-    color: inherit;
 }

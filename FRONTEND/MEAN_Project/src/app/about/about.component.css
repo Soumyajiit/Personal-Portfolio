@@ -1,0 +1,26 @@
+.about-section {
+    background-color: var(--bg-off-white); 
+}
+
+.about-content-card {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content-card p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 1em;
+}
+
+
+@media (max-width: 768px) {
+    .about-content-card {
+        padding: 25px;
+    }
+    .about-content-card p {
+        font-size: 1em;
+    }
+}

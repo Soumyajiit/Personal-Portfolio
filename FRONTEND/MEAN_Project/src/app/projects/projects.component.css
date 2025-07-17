@@ -1,0 +1,61 @@
+.projects-section {
+    background-color: var(--bg-pure-white); /* Example background */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 40px; /* Matches your content-grid gap */
+    width: 100%;
+    margin-bottom: 40px; /* Space before "View All Projects" button */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+.project-card-title {
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
+    font-weight: 500; /* Consistent font weight */
+    font-size: 1.8em; /* Consistent with your card h3 */
+    color: var(--text-primary);
+    margin-bottom: 20px; /* Consistent with your card h3 */
+}
+
+.project-card-description {
+    font-size: 1.1em; /* Consistent with your card p */
+    color: var(--text-primary);
+    margin-bottom: 20px; /* Consistent with your card p */
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-link {
+    margin-top: auto; /* Pushes button to the bottom */
+}
+
+.all-projects-button {
+    margin-top: 20px; /* Space from the grid above */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 30px; /* Smaller padding on small screens */
+    }
+    .project-card-title {
+        font-size: 1.5em;
+    }
+    .project-card-description {
+        font-size: 1em;
+    }
+}

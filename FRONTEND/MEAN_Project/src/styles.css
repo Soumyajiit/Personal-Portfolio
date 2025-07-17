@@ -1,44 +1,162 @@
-/* src/styles.css */
-
-/* Global Styles & Variables */
 :root {
-    --primary-accent: #c49cf8; /* Medium Blue */
-    --secondary-accent: #6DD4CC; /* Teal */
-    --text-primary: #333333; /* Dark Charcoal */
-    --text-secondary: #7F8C8D; /* Light Grey */
+    --primary-accent: #c49cf8;
+    --secondary-accent: #6DD4CC;
+    --text-primary: #333333;
+    --text-secondary: #7F8C8D;
     --bg-off-white: #F8F8F8;
     --bg-pure-white: #FFFFFF;
     --light-grey-border: #E0E0E0;
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.08);
+    --dark-primary-accent: #e493f8;
+    --dark-secondary-accent: #00bcd4;
+    --dark-text-primary: #e0e0e0;
+    --dark-text-secondary: #bdbdbd;
+    --dark-bg-off-white: #1a202c;
+    --dark-bg-pure-white: #13161d;
+    --dark-light-grey-border: #4a5568;
+    --dark-shadow-light: rgba(255, 255, 255, 0.05);
+    --dark-shadow-medium: rgba(255, 255, 255, 0.1);
 }
 
-/* Universal Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--text-primary);
     background-color: var(--bg-off-white);
     line-height: 1.6;
-    scroll-behavior: smooth;
+    overflow-y: scroll;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Global Container Class */
+body.dark-mode {
+    color: var(--dark-text-primary);
+    background-color: var(--dark-bg-off-white);
+    --primary-accent: var(--dark-primary-accent);
+    --secondary-accent: var(--dark-secondary-accent);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --bg-off-white: var(--dark-bg-off-white);
+    --bg-pure-white: var(--dark-bg-pure-white);
+    --light-grey-border: var(--dark-light-grey-border);
+    --shadow-light: var(--dark-shadow-light);
+    --shadow-medium: var(--dark-shadow-medium);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Global Responsive Styles (e.g., for container padding) */
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+}
+
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: var(--text-primary);
+    margin-bottom: 1em;
+    transition: color 0.3s ease;
+    margin-top: 1em;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: var(--bg-pure-white);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.button:hover {
+    background-color: var(--secondary-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+.button.secondary {
+    background-color: var(--text-secondary);
+}
+
+.button.secondary:hover {
+    background-color: #6c7a7b;
+}
+
+.card {
+    background-color: var(--bg-pure-white);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0px 8px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid var(--light-grey-border);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px var(--shadow-medium);
+}
+
+.skill-tag {
+    background-color: #E6F2F8;
+    color: var(--primary-accent);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #CCE5F5;
+    transform: translateY(-3px);
+}
+
+body.dark-mode .skill-tag {
+    background-color: #4a148c;
+    color: var(--dark-text-primary);
+}
+body.dark-mode .skill-tag:hover {
+    background-color: #6a1b9a;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 1.5em;
+    }
+    section {
+        padding: 60px 15px;
     }
 }

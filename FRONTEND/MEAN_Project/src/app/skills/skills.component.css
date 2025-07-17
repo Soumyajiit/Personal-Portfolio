@@ -1,0 +1,21 @@
+.skills-section {
+    background-color: var(--bg-off-white); /* Example background */
+}
+
+.skill-tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Matches your personal-details skill-tag gap */
+    justify-content: center;
+    max-width: 800px; /* Limit width for better presentation */
+    margin: 0 auto;
+}
+
+/* The .skill-tag styles are global in styles.css */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-tags-wrapper {
+        gap: 10px; /* Slightly smaller gap on small screens */
+    }
+}
